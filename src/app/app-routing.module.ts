@@ -5,7 +5,8 @@ import { AccountConfigComponent } from './account-config/account-config.componen
 
 const routes: Routes = [
   { path: "", component: AccueilComponent},
-  { path: "accountConfig", component:AccountConfigComponent}
+  { path: "accountConfig", component:AccountConfigComponent},
+  { path: "", redirectTo: '/accueil.component', pathMatch: 'full'}, // redirect to accueil
 ];
 
 @NgModule({

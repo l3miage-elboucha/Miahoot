@@ -1,2 +1,20 @@
+<mat-toolbar color="primary">
+    <span>Miahoot</span>
+    <span class="example-fill-remaining-space"></span>
+    <ng-container *ngIf = "user | async as U; else unlogged">
+        {{U.displayName}}
+        <img [src]="U.photoURL"/>
+        <button (click) ="logout()">Logout</button>
+    </ng-container>
+    <ng-template #unlogged>
+        <div class="loginclass">
+            <button (click)="login()" mat-raised-button color="warn">Login</button>
+        </div>
+    </ng-template>
+</mat-toolbar>
+
+<h2 style="background: red;" *ngIf="bsIsAuthentified | async">
+    En cours d'authentification
+</h2>
 <h1>MIAHOOT PROTOTYPE</h1>
 <router-outlet></router-outlet>
