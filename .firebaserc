@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "miahoot-9e337": {
+      "hosting": {
+        "Miahoot": [
+          "miahoot-abab"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "miahoot-9e337"
+  }
+}
