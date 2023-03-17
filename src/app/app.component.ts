@@ -12,9 +12,14 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AppComponent {
   public readonly user: Observable<User | null>;
   public bsIsAuthentified = new BehaviorSubject<boolean>( false );
+  public showDropdown : boolean = false;
 
   constructor(private auth: Auth) {
       this.user = authState(this.auth);
+  }
+
+  show(){
+    this.showDropdown = !this.showDropdown;
   }
 
   async login() {

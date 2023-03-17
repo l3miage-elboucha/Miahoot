@@ -1,10 +1,13 @@
 <mat-toolbar color="primary">
-    <span>Miahoot</span>
+    <span routerLink="/">Miahoot</span>
     <span class="example-fill-remaining-space"></span>
     <ng-container *ngIf = "user | async as U; else unlogged">
         {{U.displayName}}
-        <img [src]="U.photoURL"/>
-        <button (click) ="logout()">Logout</button>
+        <img mat-button [matMenuTriggerFor]="menu" src={{U.photoURL}} alt=""/>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click) ="logout()">Logout</button>
+            <button mat-menu-item routerLink="/accountConfig">Account config</button>
+        </mat-menu>
     </ng-container>
     <ng-template #unlogged>
         <div class="loginclass">
@@ -16,5 +19,6 @@
 <h2 style="background: red;" *ngIf="bsIsAuthentified | async">
     En cours d'authentification
 </h2>
+<mat-spinner *ngIf="bsIsAuthentified | async"></mat-spinner>
 <h1>MIAHOOT PROTOTYPE</h1>
 <router-outlet></router-outlet>
