@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Auth, User, authState, signOut } from '@angular/fire/auth';
 import { GoogleAuthProvider, signInWithPopup } from '@firebase/auth';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
   public bsIsAuthentified = new BehaviorSubject<boolean>( false );
   public showDropdown : boolean = false;
 
-  constructor(private auth: Auth) {
+  constructor(private auth: Auth, private userData: DataService) {
       this.user = authState(this.auth);
   }
 

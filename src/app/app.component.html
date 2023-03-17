@@ -3,7 +3,7 @@
     <span class="example-fill-remaining-space"></span>
     <ng-container *ngIf = "user | async as U; else unlogged">
         {{U.displayName}}
-        <img mat-button [matMenuTriggerFor]="menu" src={{U.photoURL}} alt=""/>
+        <img referrerpolicy="no-referrer" mat-button [matMenuTriggerFor]="menu" src={{U.photoURL}} alt=""/>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click) ="logout()">Logout</button>
             <button mat-menu-item routerLink="/accountConfig">Account config</button>
