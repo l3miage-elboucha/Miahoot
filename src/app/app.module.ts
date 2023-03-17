@@ -19,6 +19,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import { NgxMatFileInputModule } from '@angular-material-components/file-input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -42,6 +44,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatProgressSpinnerModule,
     MatCheckboxModule,
     MatRadioModule,
+    NgxMatFileInputModule,
+    FormsModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())
