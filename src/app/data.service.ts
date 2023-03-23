@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Auth, authState, user} from '@angular/fire/auth';
-import { docData, Firestore, FirestoreDataConverter, getDoc } from '@angular/fire/firestore';
+import { docData, Firestore, FirestoreDataConverter, getDoc, doc, setDoc} from '@angular/fire/firestore';
 import { Observable, switchMap, of } from 'rxjs';
 import { MiahootUser } from './miahootUser';
-import { collection, doc, setDoc } from '@angular/fire/firestore';
 
 const userConverter: FirestoreDataConverter<MiahootUser> = {
   toFirestore: (MUser) => MUser,
@@ -52,7 +51,5 @@ export class DataService {
       }
     })
   }
-
-  
 
 }
